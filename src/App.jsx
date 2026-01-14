@@ -1,14 +1,19 @@
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar.jsx";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer.jsx";
-import Home from "./pages/Home.jsx";
+import Navbar from "./components/Navbar.jsx";
 import About from "./pages/About.jsx";
-import Services from "./pages/Services.jsx";
-import Equipment from "./pages/Equipment.jsx";
-import Pricing from "./pages/Pricing.jsx";
-import Projects from "./pages/Projects.jsx";
 import Booking from "./pages/Booking.jsx";
 import Contact from "./pages/Contact.jsx";
+import Equipment from "./pages/Equipment.jsx";
+import Home from "./pages/Home.jsx";
+import Pricing from "./pages/Pricing.jsx";
+import Projects from "./pages/Projects.jsx";
+import Services from "./pages/Services.jsx";
+
+import AppliedRoboticsLab from "./pages/Facilities/AppliedRoboticsLab.jsx";
+import AutomationLab from "./pages/Facilities/AutomationLab.jsx";
+import CybarLab from "./pages/Facilities/CybarLab.jsx";
+import DesignMediaStudio from "./pages/Facilities/DesignMediaStudio.jsx";
 
 export default function App() {
   return (
@@ -24,6 +29,24 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/contact" element={<Contact />} />
+
+          {/* facilities routes */}
+          <Route
+            path="/facilities/applied-robotics-lab"
+            element={<AppliedRoboticsLab />}
+          />
+          <Route
+            path="/facilities/advanced-automation-lab"
+            element={<AutomationLab />}
+          />
+          <Route
+            path="/facilities/cyber-physical-systems-lab"
+            element={<CybarLab />}
+          />
+          <Route
+            path="/facilities/design-media-studio"
+            element={<DesignMediaStudio />}
+          />
         </Routes>
       </main>
       <Footer />

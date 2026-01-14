@@ -14,12 +14,26 @@ const researchItems = [
   { to: "/research/smart-manufacturing", label: "Smart Manufacturing" },
 ];
 
+
 const facilitiesItems = [
-  { to: "/facilities/lab-a", label: "Lab A" },
-  { to: "/facilities/lab-b", label: "Lab B" },
-  { to: "/facilities/lab-c", label: "Lab C" },
-  { to: "/facilities/studio", label: "Studio" },
+  {
+    to: "/facilities/applied-robotics-lab",
+    label: "Applied Robotics Lab",
+  },
+  {
+    to: "/facilities/cyber-physical-systems-lab",
+    label: "Cyber Physical Systems Lab",
+  },
+  {
+    to: "/facilities/advanced-automation-lab",
+    label: "Advanced Automation Lab",
+  },
+  {
+    to: "/facilities/design-media-studio",
+    label: "Design & Media Studio",
+  },
 ];
+
 
 const bulletinItems = [
   { to: "/bulletin/notice", label: "Notice" },
