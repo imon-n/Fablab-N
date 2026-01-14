@@ -11,7 +11,7 @@
   @apply bg-white/60 backdrop-blur-md border border-white/40 shadow-soft;
 }
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-lg bg-cuGreen px-4 py-2 font-medium text-white hover:bg-cuGreen-dark transition-colors;
+  @apply inline-flex items-center justify-center rounded-lg bg-cuBlue px-4 py-2 font-medium text-white hover:bg-cuBlue-dark transition-colors;
 }
 .btn-outline {
   @apply inline-flex items-center justify-center rounded-lg border border-slate-300 px-4 py-2 font-medium text-slate-700 hover:bg-slate-50 transition-colors;

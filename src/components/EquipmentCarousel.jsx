@@ -58,7 +58,7 @@ export default function EquipmentCarousel() {
               <button
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`h-2 w-2 rounded-full ${index === i ? "bg-cuGreen" : "bg-slate-300"}`}
+                className={`h-2 w-2 rounded-full ${index === i ? "bg-cuBlue" : "bg-slate-300"}`}
                 aria-label={`Slide ${i + 1}`}
               />
             ))}

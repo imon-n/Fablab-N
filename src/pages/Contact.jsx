@@ -17,15 +17,15 @@ export default function Contact() {
           <form className="space-y-4">
             <div>
               <label className="block text-sm font-medium">Name</label>
-              <input className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cuGreen" />
+              <input className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cuBlue" />
             </div>
             <div>
               <label className="block text-sm font-medium">Email</label>
-              <input type="email" className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cuGreen" />
+              <input type="email" className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cuBlue" />
             </div>
             <div>
               <label className="block text-sm font-medium">Message</label>
-              <textarea rows={6} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cuGreen" />
+              <textarea rows={6} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cuBlue" />
             </div>
             <button className="btn-primary">Send</button>
           </form>

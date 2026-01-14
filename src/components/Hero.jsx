@@ -32,7 +32,7 @@ export default function Hero() {
           {/* <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Link 
               to="/booking" 
-              className="inline-flex items-center justify-center rounded-lg px-8 py-3 text-lg font-medium text-white bg-cuGreen/80 backdrop-blur-md shadow-lg hover:bg-cuGreen/90 hover:shadow-xl transform hover:-translate-y-1 transition-all border border-white/20"
+              className="inline-flex items-center justify-center rounded-lg px-8 py-3 text-lg font-medium text-white bg-cuBlue/80 backdrop-blur-md shadow-lg hover:bg-cuBlue/90 hover:shadow-xl transform hover:-translate-y-1 transition-all border border-white/20"
             >
               Book a Slot
             </Link>

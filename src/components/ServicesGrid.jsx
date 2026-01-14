@@ -78,7 +78,7 @@ export default function ServicesGrid() {
               {/* Content */}
               <div className="relative z-10 text-white">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="text-cuGreen bg-white/20 p-2 rounded-full backdrop-blur-sm">{s.icon}</div>
+                  <div className="text-cuBlue bg-white/20 p-2 rounded-full backdrop-blur-sm">{s.icon}</div>
                   <h3 className="font-semibold text-lg">{s.title}</h3>
                 </div>
                 <p className="text-sm text-slate-200 line-clamp-2 mb-1">{s.desc}</p>

@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        cuGreen: {
+        cuBlue: {
           DEFAULT: "#0F9D58",
           dark: "#0A6D3D",
         },
