@@ -23,9 +23,9 @@ export default function BookingForm() {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="text-2xl md:text-3xl font-bold">Book a Job</h2>
+        <h2 className="text-2xl md:text-3xl font-bold">Book a Slot</h2>
         <p className="mt-2 text-slate-700">
-          Submit your job details. Technicians will review and contact you with
+          Submit your details. Technicians will review and contact you with
           confirmation and lead times.
         </p>
         <form onSubmit={onSubmit} className="mt-6 grid md:grid-cols-2 gap-6">
