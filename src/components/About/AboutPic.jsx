@@ -16,30 +16,52 @@ export default function AboutPic() {
   };
 
   return (
-    <div className="relative h-[500px]  ml-10">
-      {/* Main Static Image */}
+    <div className="relative w-full 
+                    h-auto md:h-[500px]
+                    flex flex-col gap-6
+                    md:block md:ml-10">
+
+      {/* Image 1 */}
       <img
         src="about/ab1.jpg"
-        className="rounded-xl shadow-lg w-80 h-64 absolute left-0 top-0"
         alt="img1"
+        className="rounded-xl shadow-lg
+                   w-full sm:w-96
+                   h-56 sm:h-64
+                   object-cover
+                   md:absolute md:left-0 md:top-0"
       />
 
-      {/* Up-down floating */}
+      {/* Image 2 */}
       <motion.div
         {...floatY}
-        className="absolute right-2 top-0 h-96 "
+        className="md:absolute md:right-2 md:top-0"
       >
-        <img src="about/ab2.jpg" className="rounded-xl shadow-lg w-64" alt="img2" />
-      </motion.div>
-
-      {/* Left-right floating */}
-      <motion.div {...floatX} className="absolute left-16 bottom-6">
         <img
-          src="about/ab3.jpg"
-          className="rounded-xl shadow-lg w-80 h-64 0"
-          alt="img3"
+          src="about/ab2.jpg"
+          alt="img2"
+          className="rounded-xl shadow-lg
+                     w-full sm:w-72
+                     h-56 sm:h-80
+                     object-cover"
         />
       </motion.div>
+
+      {/* Image 3 */}
+      <motion.div
+        {...floatX}
+        className="md:absolute md:left-16 md:bottom-6"
+      >
+        <img
+          src="about/ab3.jpg"
+          alt="img3"
+          className="rounded-xl shadow-lg
+                     w-full sm:w-96
+                     h-56 sm:h-64
+                     object-cover"
+        />
+      </motion.div>
+
     </div>
   );
 }

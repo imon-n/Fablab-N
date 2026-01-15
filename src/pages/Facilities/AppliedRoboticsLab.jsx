@@ -15,19 +15,22 @@ export default function AppliedRoboticsLab() {
               intelligent systems for real-world problem solving. The Applied
               Robotics Lab emphasizes practical learning and applied research in
               robotics systems, focusing on design, control, and deployment of
-              robotic solutions for industry and research. A hands-on laboratory focused on applied robotics, automation, and
-              intelligent systems for real-world problem solving. The Applied
-              Robotics Lab emphasizes practical learning and applied research in
-              robotics systems, focusing on design, control, and deployment of
-              robotic solutions for industry and research. A hands-on laboratory focused on applied robotics, automation, and
-              intelligent systems for real-world problem solving. The Applied
-              Robotics Lab emphasizes practical learning and applied research in
-              robotics systems, focusing on design, control, and deployment of
-              robotic solutions for industry and research.A hands-on laboratory focused on applied robotics, automation, and
-              intelligent systems for real-world problem solving. The Applied
-              Robotics Lab emphasizes practical learning and applied research in
-              robotics systems, focusing on design, control, and deployment of
-              robotic solutions for industry and research.
+              robotic solutions for industry and research. A hands-on laboratory
+              focused on applied robotics, automation, and intelligent systems
+              for real-world problem solving. The Applied Robotics Lab
+              emphasizes practical learning and applied research in robotics
+              systems, focusing on design, control, and deployment of robotic
+              solutions for industry and research. A hands-on laboratory focused
+              on applied robotics, automation, and intelligent systems for
+              real-world problem solving. The Applied Robotics Lab emphasizes
+              practical learning and applied research in robotics systems,
+              focusing on design, control, and deployment of robotic solutions
+              for industry and research.A hands-on laboratory focused on applied
+              robotics, automation, and intelligent systems for real-world
+              problem solving. The Applied Robotics Lab emphasizes practical
+              learning and applied research in robotics systems, focusing on
+              design, control, and deployment of robotic solutions for industry
+              and research.
             </p>
 
             {/* Buttons */}
