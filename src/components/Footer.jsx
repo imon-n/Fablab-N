@@ -72,10 +72,10 @@ export default function Footer() {
             <h4 className="font-semibold mb-3">Contact</h4>
             <div>
               <p className="text-sm text-slate-600">
-                Chittagong University Campus, Bangladesh
+                Fab Lab CU, University of Chittagong, <br /> Chattogram 4331, Bangladesh
               </p>
-              <p className="text-sm text-slate-600">fablab@cu.edu.bd</p>
-              <p className="text-sm text-slate-600">+880-XXX-XXXXXX</p>
+              <p className="text-sm text-slate-600">fablab@cu.ac.bd</p>
+              <p className="text-sm text-slate-600">+8801816305787</p>
             </div>
             <div>
               {/* Social icons */}

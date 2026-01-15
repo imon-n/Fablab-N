@@ -8,9 +8,9 @@ export default function Contact() {
             Reach out for training, workshops, collaborations, and job submissions.
           </p>
           <div className="mt-5 space-y-2 text-sm">
-            <div><span className="font-medium">Email:</span> fablab@cu.edu.bd</div>
-            <div><span className="font-medium">Phone:</span> +880-XXX-XXXXXX</div>
-            <div><span className="font-medium">Location:</span> University of Chittagong Campus</div>
+            <div><span className="font-medium">Email:</span>  fablab@cu.ac.bd</div>
+            <div><span className="font-medium">Phone:</span> +8801816305787</div>
+            <div><span className="font-medium">Location:</span> Fab Lab CU, University of Chittagong, Chattogram 4331, Bangladesh</div>
           </div>
         </div>
         <div className="glass rounded-xl p-5">
