@@ -10,10 +10,13 @@ import Pricing from "./pages/Pricing.jsx";
 import Projects from "./pages/Projects.jsx";
 import Services from "./pages/Services.jsx";
 
-import AppliedRoboticsLab from "./pages/Facilities/AppliedRoboticsLab.jsx";
+import AppliedRoboticsLab from "./pages/Facilities/AppliedRoboticsLab/AppliedRoboticsLab.jsx";
 import AutomationLab from "./pages/Facilities/AutomationLab.jsx";
 import CybarLab from "./pages/Facilities/CybarLab.jsx";
 import DesignMediaStudio from "./pages/Facilities/DesignMediaStudio.jsx";
+import Notice from "./pages/Bulletin/Notice.jsx";
+import Blog from "./pages/Bulletin/Blog.jsx";
+import GalleryMedia from "./pages/Bulletin/GalleryMedia.jsx";
 
 export default function App() {
   return (
@@ -47,6 +50,12 @@ export default function App() {
             path="/facilities/design-media-studio"
             element={<DesignMediaStudio />}
           />
+
+          {/* Bulletin  */}
+          <Route path="/bulletin/notice" element={<Notice />} />
+          <Route path="/bulletin/gallery" element={<GalleryMedia />} />
+          <Route path="/blog" element={<Blog />} />
+          
         </Routes>
       </main>
       <Footer />

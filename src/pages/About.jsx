@@ -1,6 +1,7 @@
 import AboutMissionHistory from "../components/About/AboutMissionHistory";
 import AboutPic from "../components/About/AboutPic";
 import LeadershipMessages from "../components/About/LeadershipMessages";
+import MissionVisionHistory from "../components/About/MissionVisionHistory";
 import PeopleNetwork from "../components/About/PeopleNetwork";
 
 export default function About() {
@@ -41,6 +42,8 @@ export default function About() {
           <AboutPic />
         </div>
       </div>
+
+      <MissionVisionHistory />
 
       {/* vision and histor  */}
       <AboutMissionHistory />
