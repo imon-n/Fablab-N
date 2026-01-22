@@ -50,8 +50,7 @@ export default function Blog() {
     {
       id: 4,
       title: "Research & Prototyping Opportunities in FabLab CU",
-      excerpt:
-        "Learn how FabLab CU supports research, rapid prototyping, and interdisciplinary collaboration.",
+      excerpt: "Learn how FabLab CU supports research, rapid prototyping, and interdisciplinary collaboration.",
       author: "Research Supervisor",
       date: "Jan 8, 2026",
       category: "research",
