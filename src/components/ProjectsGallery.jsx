@@ -30,14 +30,14 @@ export default function ProjectsGallery() {
             <h2 className="text-2xl md:text-3xl font-bold">Projects</h2>
             <p className="mt-2 text-slate-700">Open sharing to scale ideas without moving products globally.</p>
           </div>
-          <a
+          {/* <a
             href="https://fablabs.io"
             target="_blank"
             rel="noreferrer"
             className="btn-outline"
           >
             Explore fablabs.io
-          </a>
+          </a> */}
         </div>
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((p) => (

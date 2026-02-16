@@ -1,137 +1,119 @@
-import { FaFacebookF, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="container pt-8">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div>
-            <Link
-              to="/"
-              className="inline-block flex items-center gap-2 mb-3 hover:opacity-80 transition-opacity"
-            >
-              <img
-                src="/fab-lab-logo.png"
-                alt="Fab Lab CU"
-                className="h-12 w-auto object-contain"
-              />
+    <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+      
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 py-16">
+        
+        {/* Main Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+          
+          {/* Brand Section */}
+          <div className="space-y-4">
+            <Link to="/" className="inline-block group">
+              <div className="flex items-center gap-3 transition-transform group-hover:scale-105">
+                <div className="bg-white p-2 rounded-lg shadow-lg">
+                  <img
+                    src="/fab-lab-logo.png"
+                    alt="Fab Lab CU"
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
+              </div>
             </Link>
-            <p className="text-sm text-slate-600">
-              A distributed education and prototyping hub at University of
-              Chittagong, connecting people with tools, training, and open
-              communities.
+            <p className="text-sm text-slate-300 leading-relaxed">
+              A distributed education and prototyping hub at University of Chittagong,
+              connecting people with tools, training and open communities.
             </p>
           </div>
+
+          {/* Explore */}
           <div>
-            <h4 className="font-semibold mb-3">Explore</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/services" className="hover:text-cuBlue">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/equipment" className="hover:text-cuBlue">
-                  Equipment
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="hover:text-cuBlue">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link to="/pricing" className="hover:text-cuBlue">
-                  Pricing
-                </Link>
-              </li>
+            <h4 className="font-bold text-lg mb-4 relative inline-block">
+              Explore
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/services" className="text-slate-300 hover:text-white transition-all">Services</Link></li>
+              <li><Link to="/equipment" className="text-slate-300 hover:text-white transition-all">Equipment</Link></li>
+              <li><Link to="/projects" className="text-slate-300 hover:text-white transition-all">Projects</Link></li>
+              <li><Link to="/gallery" className="text-slate-300 hover:text-white transition-all">Gallery</Link></li>
             </ul>
           </div>
+
+          {/* Get Involved */}
           <div>
-            <h4 className="font-semibold mb-3">Get Involved</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/about" className="hover:text-cuBlue">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/booking" className="hover:text-cuBlue">
-                  Job
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-cuBlue">
-                  Contact
-                </Link>
-              </li>
+            <h4 className="font-bold text-lg mb-4 relative inline-block">
+              Get Involved
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/about" className="text-slate-300 hover:text-white transition-all">About</Link></li>
+              <li><Link to="/booking" className="text-slate-300 hover:text-white transition-all">Booking</Link></li>
+              <li><Link to="/membership" className="text-slate-300 hover:text-white transition-all">Membership</Link></li>
+              <li><Link to="/contact" className="text-slate-300 hover:text-white transition-all">Contact</Link></li>
             </ul>
           </div>
+
+          {/* Resources (New Column) */}
           <div>
-            <h4 className="font-semibold mb-3">Contact</h4>
-            <div>
-              <p className="text-sm text-slate-600">
-                Fab Lab CU, University of Chittagong, <br /> Chattogram 4331, Bangladesh
+            <h4 className="font-bold text-lg mb-4 relative inline-block">
+              Resources
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/workshops" className="text-slate-300 hover:text-white transition-all">Workshops</Link></li>
+              <li><Link to="/events" className="text-slate-300 hover:text-white transition-all">Events</Link></li>
+              <li><Link to="/blog" className="text-slate-300 hover:text-white transition-all">Blog</Link></li>
+              <li><Link to="/faq" className="text-slate-300 hover:text-white transition-all">FAQ</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-bold text-lg mb-4 relative inline-block">
+              Contact
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+            </h4>
+
+            <div className="space-y-3 text-sm text-slate-300">
+              <p>
+                Fab Lab CU, University of Chittagong,<br />
+                Chattogram 4331, Bangladesh
               </p>
-              <p className="text-sm text-slate-600">fablab@cu.ac.bd</p>
-              <p className="text-sm text-slate-600">+8801816305787</p>
-            </div>
-            <div>
-              {/* Social icons */}
-              <div className="flex gap-2 mt-1">
-                <a
-                  href="#"
-                  className="flex items-center justify-center w-8 h-8 text-lg border border-gray-300 rounded-full shadow-md hover:shadow-lg transition transform hover:scale-110 bg-blue-600 text-white"
-                >
-                  <FaFacebookF />
+              <p>
+                <a href="mailto:fablab@cu.ac.bd" className="hover:text-white">
+                  fablab@cu.ac.bd
                 </a>
-                <a
-                  href="#"
-                  className="flex items-center justify-center w-8 h-8 text-lg border border-gray-300 rounded-full shadow-md hover:shadow-lg transition transform hover:scale-110 bg-red-600 text-white"
-                >
-                  <FaYoutube />
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center justify-center transition duration-300 w-8 h-8 text-lg border border-gray-300 rounded-full shadow-md  transform hover:scale-110 bg-sky-600 text-white"
-                >
-                  <FaLinkedin />
-                </a>
-              </div>
+              </p>
+              <p>+8801816305787</p>
             </div>
           </div>
+
         </div>
 
-        <div className="mt-4">
-          <hr />
-        </div>
-        <div className="mt-4 text-xs text-slate-500 text-center">
-          <p>
-            Inspired by the global Fab Lab network (fablabs.io) and university
-            Fab Labs that operate as bureau services offering laser cutting, 3D
-            printing (FDM & SLA), and CNC machining.
-          </p>
-          <p className="mt-2">
-            © {new Date().getFullYear()} Fab Lab – University of Chittagong
-          </p>
-        </div>
-
-        <div className="flex justify-around items-center mt-2 mb-3">
-          <div className="flex items-center justify-center transition duration-300 w-10 h-10 shadow-md  transform hover:scale-110">
-            <img src="services/Government_Seal.svg" alt="" />
-          </div>
-          <div className="flex items-center justify-center transition duration-300 w-14 h-10 shadow-md  transform hover:scale-110">
-            <img src="services/worldBank.webp" alt="" />
-          </div>
-          <div className="flex items-center justify-center transition duration-300 w-10 h-10 shadow-md  transform hover:scale-110">
-            <img src="services/manjuriCommision.png" alt="" />
-          </div>
-          <div className="flex items-center justify-center transition duration-300 w-8 h-10 shadow-md  transform hover:scale-110">
-            <img src="services/heat.png" alt="" />
-          </div>
-          <div className="flex items-center justify-center transition duration-300 w-6 h-6 shadow-md  transform hover:scale-110">
-            <img src="services/cuLogo.png" alt="" />
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-slate-700/50">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+            <p>
+              © {new Date().getFullYear()} Fab Lab – University of Chittagong.
+              All rights reserved.
+            </p>
+            <div className="flex gap-6 text-xs">
+              <Link to="/privacy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
 

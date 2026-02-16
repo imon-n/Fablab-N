@@ -1,5 +1,6 @@
-import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
+import Topbar from "./Topbar";
 
 const educationItems = [
   { to: "/education/courses", label: "Courses & Training Programs" },
@@ -14,26 +15,17 @@ const researchItems = [
   { to: "/research/smart-manufacturing", label: "Smart Manufacturing" },
 ];
 
-
 const facilitiesItems = [
-  {
-    to: "/facilities/applied-robotics-lab",
-    label: "Applied Robotics Lab",
-  },
-  {
-    to: "/facilities/cyber-physical-systems-lab",
-    label: "Cyber Physical Systems Lab",
-  },
-  {
-    to: "/facilities/advanced-automation-lab",
-    label: "Advanced Automation Lab",
-  },
-  {
-    to: "/facilities/design-media-studio",
-    label: "Design & Media Studio",
-  },
+  { to: "/facilities/3d-fabrication-lab", label: "3D Fabrication Lab" },
+  { to: "/facilities/electronics-robotics-lab", label: "Electronics & Robotics Lab" },
+  { to: "/facilities/laser-cutting-lab", label: "Laser Cutting Lab" },
+  { to: "/facilities/cnc-woodworking-lab", label: "CNC & Woodworking Lab" },
+  { to: "/facilities/graphics-print-lab", label: "Graphics & Print Lab" },
+  { to: "/facilities/digital-textile-lab", label: "Digital Textile Lab" },
+  { to: "/facilities/competency-development-lab", label: "Competency Development Lab" },
+  { to: "/facilities/needle-thread-lab", label: "Needle & Thread Lab" },
+  { to: "/facilities/brain-computing-media-lab", label: "Brain Computing & Media Lab" },
 ];
-
 
 const bulletinItems = [
   { to: "/bulletin/notice", label: "Notice" },
@@ -45,30 +37,18 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const NavDropdown = ({ label, items }) => (
-    <div className="relative group h-full flex items-center">
-      <button className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-50 flex items-center gap-1 focus:outline-none">
+    <div className="relative group">
+      <button className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-cuBlue">
         {label}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 opacity-50 group-hover:rotate-180 transition-transform duration-200"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
       </button>
-      <div className="absolute top-full left-0 mt-1 w-64 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-soft opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 ease-out z-50">
+
+      <div className="absolute left-0 top-full mt-2 w-64 bg-white border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
         <ul className="py-2">
           {items.map((item) => (
             <li key={item.to}>
               <NavLink
                 to={item.to}
-                className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-cuBlue transition-colors"
-                onClick={() => setOpen(false)}
+                className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-cuBlue"
               >
                 {item.label}
               </NavLink>
@@ -80,125 +60,84 @@ export default function Navbar() {
   );
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-      <div className="container flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2">
-          <img
-            src="/fab-lab-logo.png"
-            alt="Fab Lab CU"
-            className="h-12 w-auto object-contain"
-          />
-        </Link>
-        <nav className="hidden md:flex items-center gap-1">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `px-3 py-2 rounded-md text-sm font-medium ${
-                isActive
-                  ? "text-cuBlue bg-slate-100"
-                  : "text-slate-700 hover:bg-slate-50"
-              }`
-            }
-          >
-            Home
-          </NavLink>
+    <>
+      {/* Topbar MUST be normal (no sticky inside Topbar.jsx) */}
+      <Topbar />
 
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `px-3 py-2 rounded-md text-sm font-medium ${
-                isActive
-                  ? "text-cuBlue bg-slate-100"
-                  : "text-slate-700 hover:bg-slate-50"
-              }`
-            }
-          >
-            About
-          </NavLink>
-          <NavDropdown label="Education" items={educationItems} />
-          <NavDropdown label="Research" items={researchItems} />
-          <NavDropdown label="Facilities" items={facilitiesItems} />
-
-          <NavDropdown label="Bulletin" items={bulletinItems} />
-
-          <Link
-            to="/booking"
-            className="inline-flex items-center justify-center 
-             bg-blue-600 hover:bg-blue-700 
-             text-white font-semibold 
-             px-4 py-2 ml-2 
-             rounded-lg 
-             shadow-md hover:shadow-lg 
-             transition-all duration-300 ease-in-out"
-          >
-            Book a Slot
+      {/* ONLY THIS IS STICKY */}
+      <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
+        <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4">
+          
+          {/* Logo */}
+          <Link to="/">
+            <img
+              src="/fab-lab-logo.png"
+              alt="Fab Lab CU"
+              className="h-12 object-contain"
+            />
           </Link>
-        </nav>
-        <button
-          className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100"
-          onClick={() => setOpen((o) => !o)}
-          aria-label="Toggle Menu"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-          >
-            <path strokeWidth="1.5" d="M3 6h18M3 12h18M3 18h18" />
-          </svg>
-        </button>
-      </div>
-      {open && (
-        <div className="md:hidden border-t border-slate-200 bg-white max-h-[80vh] overflow-y-auto">
-          <div className="container py-3 space-y-4">
+
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex items-center gap-6">
             <NavLink
               to="/"
-              className="block px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-50"
-              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `text-sm font-medium ${
+                  isActive ? "text-cuBlue" : "text-slate-700 hover:text-cuBlue"
+                }`
+              }
             >
               Home
             </NavLink>
 
-            {[
-              { label: "Education", items: educationItems },
-              { label: "Research", items: researchItems },
-              { label: "Facilities", items: facilitiesItems },
-              { label: "Bulletin", items: bulletinItems },
-            ].map((section) => (
-              <div key={section.label}>
-                <div className="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-wider">
-                  {section.label}
-                </div>
-                <div className="mt-1 space-y-1 pl-3 border-l-2 border-slate-100 ml-3">
-                  {section.items.map((item) => (
-                    <NavLink
-                      key={item.to}
-                      to={item.to}
-                      className="block px-3 py-2 rounded-md text-sm text-slate-700 hover:bg-slate-50"
-                      onClick={() => setOpen(false)}
-                    >
-                      {item.label}
-                    </NavLink>
-                  ))}
-                </div>
-              </div>
-            ))}
-
             <NavLink
               to="/about"
-              className="block px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-50"
-              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `text-sm font-medium ${
+                  isActive ? "text-cuBlue" : "text-slate-700 hover:text-cuBlue"
+                }`
+              }
             >
               About
             </NavLink>
-            <Link to="/booking" className="btn-primary w-full text-center mt-4">
-              Book a Job
+
+            <NavDropdown label="Education" items={educationItems} />
+            <NavDropdown label="Research" items={researchItems} />
+            <NavDropdown label="Facilities" items={facilitiesItems} />
+            <NavDropdown label="Bulletin" items={bulletinItems} />
+
+            <Link
+              to="/booking"
+              className="ml-4 px-4 py-2 bg-cuBlue text-white rounded-md hover:opacity-90 transition"
+            >
+              Book a Slot
+            </Link>
+          </nav>
+
+          {/* Mobile Button */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setOpen(!open)}
+          >
+            ☰
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {open && (
+          <div className="md:hidden bg-white border-t px-4 py-4 space-y-3">
+            <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
+            <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
+            <NavLink to="/education/courses" onClick={() => setOpen(false)}>Education</NavLink>
+            <NavLink to="/research/digital-fabrication" onClick={() => setOpen(false)}>Research</NavLink>
+            <NavLink to="/facilities/3d-fabrication-lab" onClick={() => setOpen(false)}>Facilities</NavLink>
+            <NavLink to="/bulletin/notice" onClick={() => setOpen(false)}>Bulletin</NavLink>
+            <Link to="/booking" onClick={() => setOpen(false)} className="block bg-cuBlue text-white text-center py-2 rounded">
+              Book a Slot
             </Link>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
+    </>
   );
 }

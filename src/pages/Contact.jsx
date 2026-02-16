@@ -20,7 +20,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-8 px-4 md:px-6">
+    <div className="max-w-5xl mx-auto py-8 px-8 md:px-6">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Left */}
