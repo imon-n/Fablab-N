@@ -1,30 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
-import Topbar from "./Topbar";
-
-const educationItems = [
-  { to: "/education/courses", label: "Courses & Training Programs" },
-  { to: "/education/workshops", label: "Workshops & Seminars" },
-  { to: "/education/competitions", label: "Competitions & Hackathons" },
-];
-
-const researchItems = [
-  { to: "/research/digital-fabrication", label: "Digital Fabrication" },
-  { to: "/research/robotics-automation", label: "Robotics & Automation" },
-  { to: "/research/ai-ml", label: "AI & Machine Learning" },
-  { to: "/research/smart-manufacturing", label: "Smart Manufacturing" },
-];
 
 const facilitiesItems = [
-  { to: "/facilities/3d-fabrication-lab", label: "3D Fabrication Lab" },
-  { to: "/facilities/electronics-robotics-lab", label: "Electronics & Robotics Lab" },
-  { to: "/facilities/laser-cutting-lab", label: "Laser Cutting Lab" },
-  { to: "/facilities/cnc-woodworking-lab", label: "CNC & Woodworking Lab" },
-  { to: "/facilities/graphics-print-lab", label: "Graphics & Print Lab" },
-  { to: "/facilities/digital-textile-lab", label: "Digital Textile Lab" },
-  { to: "/facilities/competency-development-lab", label: "Competency Development Lab" },
-  { to: "/facilities/needle-thread-lab", label: "Needle & Thread Lab" },
-  { to: "/facilities/brain-computing-media-lab", label: "Brain Computing & Media Lab" },
+  { to: "/facilities/applied-robotics-lab", label: "Applied Robotics Lab" },
+  { to: "/facilities/advanced-automation-lab", label: "Advanced Automation Lab" },
+  { to: "/facilities/cyber-physical-systems-lab", label: "Cyber Physical Systems Lab" },
+  { to: "/facilities/design-media-studio", label: "Design & Media Studio" },
 ];
 
 const bulletinItems = [
@@ -36,19 +17,37 @@ const bulletinItems = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const NavDropdown = ({ label, items }) => (
+  const navLinkClass = ({ isActive }) =>
+    `px-3 py-2 rounded-md text-sm font-medium transition ${
+      isActive
+        ? "text-cuBlue bg-slate-100"
+        : "text-slate-700 hover:bg-slate-50 hover:text-cuBlue"
+    }`;
+
+  const Dropdown = ({ label, items }) => (
     <div className="relative group">
-      <button className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-cuBlue">
+      <button className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-50 flex items-center gap-1">
         {label}
+        <svg
+          className="h-4 w-4 opacity-50 group-hover:rotate-180 transition-transform duration-200"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
       </button>
 
-      <div className="absolute left-0 top-full mt-2 w-64 bg-white border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+      <div className="absolute left-0 top-full mt-2 w-64 bg-white shadow-lg border border-slate-200 rounded-xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
         <ul className="py-2">
           {items.map((item) => (
             <li key={item.to}>
               <NavLink
                 to={item.to}
-                className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-cuBlue"
+                className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-cuBlue transition"
               >
                 {item.label}
               </NavLink>
@@ -60,84 +59,100 @@ export default function Navbar() {
   );
 
   return (
-    <>
-      {/* Topbar MUST be normal (no sticky inside Topbar.jsx) */}
-      <Topbar />
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+      <div className="container mx-auto flex items-center justify-between h-16 px-4">
 
-      {/* ONLY THIS IS STICKY */}
-      <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4">
-          
-          {/* Logo */}
-          <Link to="/">
-            <img
-              src="/fab-lab-logo.png"
-              alt="Fab Lab CU"
-              className="h-12 object-contain"
-            />
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
+          <img
+            src="/fab-lab-logo.png"
+            alt="Fab Lab CU"
+            className="h-12 w-auto object-contain"
+          />
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-1">
+
+          <NavLink to="/" className={navLinkClass}>Home</NavLink>
+          <NavLink to="/about" className={navLinkClass}>About</NavLink>
+          <NavLink to="/research" className={navLinkClass}>Research</NavLink>
+          <NavLink to="/facilities" className={navLinkClass}>Facilities</NavLink>
+
+          <Dropdown label="Bulletin" items={bulletinItems} />
+          <Dropdown label="Education" items={bulletinItems} />
+
+          <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
+
+          <Link
+            to="/booking"
+            className="ml-3 inline-flex items-center justify-center rounded-lg bg-cuBlue px-4 py-2 text-white text-sm font-medium hover:bg-cuBlue-dark transition"
+          >
+            Book Now
           </Link>
+        </nav>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-6">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `text-sm font-medium ${
-                  isActive ? "text-cuBlue" : "text-slate-700 hover:text-cuBlue"
-                }`
-              }
-            >
-              Home
-            </NavLink>
+        {/* Mobile Toggle */}
+        <button
+          className="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-md"
+          onClick={() => setOpen(!open)}
+        >
+          ☰
+        </button>
+      </div>
 
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `text-sm font-medium ${
-                  isActive ? "text-cuBlue" : "text-slate-700 hover:text-cuBlue"
-                }`
-              }
-            >
-              About
-            </NavLink>
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden border-t border-slate-200 bg-white">
+          <div className="px-4 py-4 space-y-2">
 
-            <NavDropdown label="Education" items={educationItems} />
-            <NavDropdown label="Research" items={researchItems} />
-            <NavDropdown label="Facilities" items={facilitiesItems} />
-            <NavDropdown label="Bulletin" items={bulletinItems} />
+            <NavLink to="/" onClick={() => setOpen(false)} className="block">Home</NavLink>
+            <NavLink to="/about" onClick={() => setOpen(false)} className="block">About</NavLink>
+            <NavLink to="/services" onClick={() => setOpen(false)} className="block">Services</NavLink>
+            <NavLink to="/equipment" onClick={() => setOpen(false)} className="block">Equipment</NavLink>
+            <NavLink to="/pricing" onClick={() => setOpen(false)} className="block">Pricing</NavLink>
+            <NavLink to="/projects" onClick={() => setOpen(false)} className="block">Projects</NavLink>
+            <NavLink to="/contact" onClick={() => setOpen(false)} className="block">Contact</NavLink>
+
+            <div className="pt-2 border-t">
+              <div className="text-xs uppercase text-slate-400 font-semibold">Facilities</div>
+              {facilitiesItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="block pl-3 py-1"
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+
+            <div className="pt-2 border-t">
+              <div className="text-xs uppercase text-slate-400 font-semibold">Bulletin</div>
+              {bulletinItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="block pl-3 py-1"
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
 
             <Link
               to="/booking"
-              className="ml-4 px-4 py-2 bg-cuBlue text-white rounded-md hover:opacity-90 transition"
+              onClick={() => setOpen(false)}
+              className="block mt-3 text-center bg-cuBlue text-white py-2 rounded-lg"
             >
-              Book a Slot
+              Book Now
             </Link>
-          </nav>
 
-          {/* Mobile Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setOpen(!open)}
-          >
-            ☰
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {open && (
-          <div className="md:hidden bg-white border-t px-4 py-4 space-y-3">
-            <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
-            <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
-            <NavLink to="/education/courses" onClick={() => setOpen(false)}>Education</NavLink>
-            <NavLink to="/research/digital-fabrication" onClick={() => setOpen(false)}>Research</NavLink>
-            <NavLink to="/facilities/3d-fabrication-lab" onClick={() => setOpen(false)}>Facilities</NavLink>
-            <NavLink to="/bulletin/notice" onClick={() => setOpen(false)}>Bulletin</NavLink>
-            <Link to="/booking" onClick={() => setOpen(false)} className="block bg-cuBlue text-white text-center py-2 rounded">
-              Book a Slot
-            </Link>
           </div>
-        )}
-      </header>
-    </>
+        </div>
+      )}
+    </header>
   );
 }

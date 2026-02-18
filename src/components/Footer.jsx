@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import { FiSend } from "react-icons/fi";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import {  FaLinkedinIn } from "react-icons/fa6";
+
 
 export default function Footer() {
   return (
@@ -13,26 +17,60 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         
         {/* Main Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           
           {/* Brand Section */}
-          <div className="space-y-4">
-            <Link to="/" className="inline-block group">
-              <div className="flex items-center gap-3 transition-transform group-hover:scale-105">
-                <div className="bg-white p-2 rounded-lg shadow-lg">
-                  <img
-                    src="/fab-lab-logo.png"
-                    alt="Fab Lab CU"
-                    className="h-12 w-auto object-contain"
-                  />
-                </div>
-              </div>
-            </Link>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              A distributed education and prototyping hub at University of Chittagong,
-              connecting people with tools, training and open communities.
-            </p>
-          </div>
+       
+<div className="space-y-4">
+
+  <Link to="/" className="inline-block group">
+    <div className="flex items-center gap-3 transition-transform group-hover:scale-105">
+      <div className="bg-white p-2 rounded-lg shadow-lg">
+        <img
+          src="/fab-lab-logo.png"
+          alt="Fab Lab CU"
+          className="h-12 w-auto object-contain"
+        />
+      </div>
+    </div>
+  </Link>
+
+  <p className="text-sm text-slate-300 leading-relaxed">
+    A distributed education and prototyping hub at University of Chittagong,
+    connecting people with tools, training and open communities.
+  </p>
+
+  {/* Email Subscribe */}
+  <div className="relative mt-6">
+    <input
+      type="email"
+      placeholder="Your Email Address"
+      className="w-full bg-transparent border-b border-slate-600 pb-3 pr-10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 transition"
+    />
+
+    <button className="absolute right-0 top-0 text-cyan-400 hover:text-cyan-300 transition">
+      <FiSend size={22} />
+    </button>
+  </div>
+
+  {/* Social Icons */}
+  <div className="flex gap-5 pt-4 text-slate-400">
+    <a href="#" className="hover:text-white transition">
+      <FaFacebookF size={16} />
+    </a>
+    <a href="#" className="hover:text-white transition">
+      < FaLinkedinIn size={16} />
+    </a>
+    <a href="#" className="hover:text-white transition">
+      <FaInstagram size={16} />
+    </a>
+    <a href="#" className="hover:text-white transition">
+      <FaYoutube size={16} />
+    </a>
+  </div>
+
+</div>
+
 
           {/* Explore */}
           <div>
@@ -77,13 +115,13 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-bold text-lg mb-4 relative inline-block">
+          <div className="-ml-10">
+            <h4 className="font-bold text-lg mb-4 relative inline-block ">
               Contact
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
             </h4>
 
-            <div className="space-y-3 text-sm text-slate-300">
+            <div className="space-y-2 text-sm text-slate-300 ">
               <p>
                 Fab Lab CU, University of Chittagong,<br />
                 Chattogram 4331, Bangladesh
@@ -100,7 +138,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-slate-700/50">
+        <div className="mt-8 pt-6 border-t border-slate-700/50">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
             <p>
               © {new Date().getFullYear()} Fab Lab – University of Chittagong.

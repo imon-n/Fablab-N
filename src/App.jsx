@@ -16,6 +16,9 @@ import AppliedRoboticsLab from "./pages/Facilities/AppliedRoboticsLab/AppliedRob
 import AutomationLab from "./pages/Facilities/AutomationLab.jsx";
 import CybarLab from "./pages/Facilities/CybarLab.jsx";
 import DesignMediaStudio from "./pages/Facilities/DesignMediaStudio.jsx";
+import FacilitiesPage from "./pages/FacilitiesPage.jsx";
+import T3DPrintinglab from "./pages/Facilities/t3DPrintinglab.jsx";
+
 
 export default function App() {
   return (
@@ -26,16 +29,24 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          
           <Route path="/equipment" element={<Equipment />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/contact" element={<Contact />} />
 
+
+          <Route path="/facilities" element={<FacilitiesPage />} />
+
           {/* facilities routes */}
           <Route
             path="/facilities/applied-robotics-lab"
             element={<AppliedRoboticsLab />}
+          />
+          <Route
+            path="/facilities/3dlab"
+            element={<T3DPrintinglab />}
           />
           <Route
             path="/facilities/advanced-automation-lab"

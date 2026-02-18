@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaTools, FaLightbulb, FaUsers } from "react-icons/fa";
 import Btn from "../utlis/Btn";
+import { Link, NavLink } from "react-router-dom";
 
 export default function MakersSection() {
   const container = {
@@ -91,7 +92,7 @@ export default function MakersSection() {
     
     <h2 className="text-4xl md:text-5xl uppercase font-extrabold leading-tight">
       <span className="bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">
-        Ideas Into Action.
+        From blueprint to business
       </span>
     </h2>
   </motion.h2>
@@ -134,7 +135,10 @@ export default function MakersSection() {
             </motion.div>
 
             {/* CTA */}
-            <Btn>About Us</Btn>
+            <Link to="about" >
+            <Btn className="mt-4 px-8">About Us</Btn>
+            </Link>
+            
           </motion.div>
 
           {/* RIGHT CONTENT - STACKED VIDEO STYLE */}
