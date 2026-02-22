@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FaTools, FaLightbulb, FaUsers } from "react-icons/fa";
 import Btn from "../utlis/Btn";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function MakersSection() {
   const container = {
@@ -49,9 +49,10 @@ export default function MakersSection() {
   ];
 
   return (
-    <section className="relative bg-white py-8 overflow-hidden">
+    <section className="relative bg-white py-12 lg:py-20 overflow-hidden">
+      
       {/* Decorative Background Icons */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      <div className="absolute inset-0 opacity-5 pointer-events-none hidden md:block">
         <div className="absolute top-16 left-10 text-blue-600 text-6xl">
           <FaTools />
         </div>
@@ -63,8 +64,8 @@ export default function MakersSection() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <motion.div
@@ -72,40 +73,38 @@ export default function MakersSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="max-w-xl space-y-8"
+            className="max-w-xl space-y-6 lg:space-y-8"
           >
-            <div className="flex items-center gap-1 flex-wrap">
-  
-  {/* Badge */}
-  <motion.span
-    variants={fadeUp}
-    className="px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full whitespace-nowrap"
-  >
-    Makers Hub
-  </motion.span>
+            <div className="flex items-center gap-3 flex-wrap">
 
-  {/* Title */}
-  <motion.h2
-    variants={fadeUp}
-    className="text-4xl md:text-5xl font-bold leading-tight whitespace-nowrap"
-  >
-    
-    <h2 className="text-4xl md:text-5xl uppercase font-extrabold leading-tight">
-      <span className="bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">
-        From blueprint to business
-      </span>
-    </h2>
-  </motion.h2>
+              {/* Badge */}
+              <motion.span
+                variants={fadeUp}
+                className="px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full"
+              >
+                Makers Hub
+              </motion.span>
 
-</div>
+              {/* Title */}
+              <motion.h2
+                variants={fadeUp}
+                className="text-3xl sm:text-4xl md:text-5xl uppercase font-extrabold leading-tight"
+              >
+                <span className="bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">
+                  From blueprint to business
+                </span>
+              </motion.h2>
+
+            </div>
 
             {/* Description */}
             <motion.p
               variants={fadeUp}
-              className="text-lg text-slate-600 leading-relaxed"
+              className="text-base sm:text-lg text-slate-600 leading-relaxed"
             >
               A creative environment where students design, prototype,
-              and turn ideas into impactful innovations.  A creative environment where students design, prototype,
+              and turn ideas into impactful innovations. A creative
+              environment where students design, prototype,
               and turn ideas into impactful innovations.
             </motion.p>
 
@@ -118,7 +117,7 @@ export default function MakersSection() {
                   whileHover={{ x: 8 }}
                   className="flex items-start gap-4 p-4 rounded-xl bg-white border border-blue-100 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-600 text-white shadow-md">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-blue-600 text-white shadow-md shrink-0">
                     <item.icon className="text-lg" />
                   </div>
 
@@ -135,27 +134,30 @@ export default function MakersSection() {
             </motion.div>
 
             {/* CTA */}
-            <Link to="about" >
-            <Btn className="mt-4 px-8">About Us</Btn>
+            <Link to="about">
+              <Btn className="mt-4 px-8 w-full sm:w-auto">
+                About Us
+              </Btn>
             </Link>
-            
+
           </motion.div>
 
-          {/* RIGHT CONTENT - STACKED VIDEO STYLE */}
+          {/* RIGHT CONTENT */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative flex justify-center items-center"
+            className="relative flex justify-center items-center mt-10 lg:mt-0"
           >
-            <div className="absolute w-[520px] h-[300px] bg-blue-200 rounded-3xl rotate-3 shadow-xl"></div>
-            <div className="absolute w-[520px] h-[300px] bg-blue-400 rounded-3xl -rotate-6 shadow-xl"></div>
+            {/* Stacked Background Layers (Responsive Width) */}
+            <div className="absolute w-[90%] sm:w-[480px] lg:w-[520px] h-[220px] sm:h-[260px] lg:h-[300px] bg-blue-200 rounded-3xl rotate-3 shadow-xl"></div>
+            <div className="absolute w-[90%] sm:w-[480px] lg:w-[520px] h-[220px] sm:h-[260px] lg:h-[300px] bg-blue-400 rounded-3xl -rotate-6 shadow-xl"></div>
 
             <motion.div
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200 }}
-              className="relative w-[520px] max-w-full rounded-3xl overflow-hidden shadow-2xl border border-blue-200 bg-white"
+              className="relative w-full max-w-[520px] rounded-3xl overflow-hidden shadow-2xl border border-blue-200 bg-white"
             >
               <div className="aspect-video w-full">
                 <iframe
@@ -167,13 +169,14 @@ export default function MakersSection() {
                 ></iframe>
               </div>
 
-              {/* Fake Browser Dots */}
+              {/* Browser Dots */}
               <div className="absolute top-3 left-4 flex gap-2">
                 <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
               </div>
             </motion.div>
+
           </motion.div>
 
         </div>

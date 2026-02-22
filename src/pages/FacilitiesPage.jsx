@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import { Typewriter } from "react-simple-typewriter";
-import { motion } from "framer-motion";
 import { MdArrowForward } from "react-icons/md"
 
 export const facilities = [
   {
-    to: "/facilities/3d-fabrication-lab",
+    to: "/facilities/3dlab",
     label: "3D Fabrication Lab",
     subtitle: "Rapid Prototyping",
     image: "/services/laser-cutting.jpeg",
