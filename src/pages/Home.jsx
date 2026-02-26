@@ -1,10 +1,10 @@
 import Hero from "../components/Hero.jsx";
 import ServicesGrid from "../components/ServicesGrid.jsx";
-import EquipmentCarousel from "../components/EquipmentCarousel.jsx";
 import UpcomingWorkshops from "../components/UpcomingWorkshops.jsx";
 import FAQSection from "../components/FAQSection.jsx";
 import FabLabCTA from "../components/FabLabCTA.jsx";
 import MakersSection from "../components/MakersSection.jsx";
+import Projects from "../components/Projects.jsx";
 
 export default function Home() {
   return (
@@ -12,8 +12,8 @@ export default function Home() {
       <Hero />
       <MakersSection />
       <ServicesGrid />
-      <EquipmentCarousel />
       <UpcomingWorkshops />
+      <Projects />
       <FAQSection />
       <FabLabCTA />
     </>

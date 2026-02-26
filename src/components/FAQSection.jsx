@@ -9,28 +9,32 @@ export default function FAQWithTestimonials() {
 
   /* ================= SHORT FAQ ================= */
   const faqs = [
-    {
-      question: "What machines can I use?",
-      answer:
-        "Members get access to 3D printers, CNC machines, laser cutters, electronics stations and more.",
-    },
-    {
-      question: "Do you offer technical support?",
-      answer:
-        "Yes, our lab instructors guide you during machine use and prototyping sessions.",
-    },
-    {
-      question: "Do you offer technical support?",
-      answer:
-        "Yes, our lab instructors guide you during machine use and prototyping sessions.",
-    },
-    {
-      question: "How do I join FabLab CU?",
-      answer:
-        "You can apply online through our membership page and attend a short orientation session.",
-    },
-  ];
-
+  {
+    question: "What machines and tools are available?",
+    answer:
+      "FabLab CU offers 3D printers, laser cutters, CNC routers, vinyl cutters, electronics workstations, soldering stations, and basic woodworking tools.",
+  },
+  {
+    question: "Do I need prior experience to use the equipment?",
+    answer:
+      "No. Beginners are welcome. We provide training sessions and supervised access so you can safely learn how to use the machines.",
+  },
+  {
+    question: "How can I join FabLab CU?",
+    answer:
+      "You can join by submitting an online membership form and attending an orientation session to receive your access credentials.",
+  },
+  {
+    question: "Are there membership fees?",
+    answer:
+      "FabLab CU offers both free student memberships and paid access options for non-students or extended usage. Details are available on the membership page.",
+  },
+  {
+    question: "Can I work on my own project?",
+    answer:
+      "Yes! Members are encouraged to bring their own ideas and work independently or collaboratively on personal or group projects.",
+  },
+];
   /* ================= TESTIMONIALS ================= */
   const testimonials = [
     {
@@ -40,19 +44,19 @@ export default function FAQWithTestimonials() {
       image: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
-      name: "Ayesha Rahman",
+      name: "Philipp Albrecht",
       role: "Engineering Student",
       text: "The hands-on workshops gave me real fabrication experience beyond the classroom.s rapidly prototype our first product. The facilities and guidance made everything poss",
       image: "https://randomuser.me/api/portraits/women/44.jpg",
     },
     {
       name: "Tanvir Hasan",
-      role: "Robotics Club Member",
+      role: "Computer Science student",
       text: "Access to machines and mentors makes FabLab CU a true innovation hu s rapidly prototype our first product. The facilities and guidance made everything possb.",
       image: "https://randomuser.me/api/portraits/men/46.jpg",
     },
     {
-      name: "Nusrat Jahan",
+      name: "Jenifar Rahi",
       role: "Product Designer",
       text: "From idea to working prototype — FabLab CU makes innovation practical.s rapidly prototype our first product. The facilities and guidance made everything poss",
       image: "https://randomuser.me/api/portraits/women/65.jpg",
@@ -106,7 +110,7 @@ export default function FAQWithTestimonials() {
         </motion.div>
 
         {/* FAQ Items */}
-        <div className="space-y-5">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}

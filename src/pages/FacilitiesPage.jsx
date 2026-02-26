@@ -2,64 +2,11 @@ import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import { Typewriter } from "react-simple-typewriter";
 import { MdArrowForward } from "react-icons/md"
-
-export const facilities = [
-  {
-    to: "/facilities/3dlab",
-    label: "3D Fabrication Lab",
-    subtitle: "Rapid Prototyping",
-    image: "/services/laser-cutting.jpeg",
-  },
-  {
-    to: "/facilities/electronics-robotics-lab",
-    label: "Electronics & Robotics Lab",
-    subtitle: "Smart Systems",
-    image: "/services/fdm-3d-printing.jpg",
-  },
-  {
-    to: "/facilities/laser-cutting-lab",
-    label: "Laser Cutting Lab",
-    subtitle: "Precision Cutting",
-    image: "/services/sla-3d-printing.jpg",
-  },
-  {
-    to: "/facilities/cnc-woodworking-lab",
-    label: "CNC & Woodworking Lab",
-    subtitle: "Advanced Machining",
-    image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    to: "/facilities/graphics-print-lab",
-    label: "Graphics & Print Lab",
-    subtitle: "Creative Media",
-    image: "/services/fdm-3d-printing.jpg",
-  },
-  {
-    to: "/facilities/digital-textile-lab",
-    label: "Digital Textile Lab",
-    subtitle: "Smart Fabric",
-    image: "/services/sla-3d-printing.jpg",
-  },
-  {
-    to: "/facilities/competency-development-lab",
-    label: "Competency Development Lab",
-    subtitle: "Skill Growth",
-    image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    to: "/facilities/needle-thread-lab",
-    label: "Needle & Thread Lab",
-    subtitle: "Textile Craft",
-    image: "/services/laser-cutting.jpeg",
-  },
-];
+import { facilities } from "./Facilities/dataFacilities";
 
 export default function FacilitiesPage() {
   return (
     <>
-      {/* ================= HERO BANNER ================= */}
       {/* ================= HERO BANNER ================= */}
 <section className="relative h-[380px] md:h-[460px] flex items-center justify-center text-center overflow-hidden">
   
@@ -89,12 +36,12 @@ export default function FacilitiesPage() {
 
 </span>
 
-    <h1 className="ttext-5xl md:text-5xl font-bold tracking-tight text-white mb-4">
+    <h1 className="ttext-5xl md:text-5xl font-bold tracking-tight text-white mb-4 uppercase">
       <Typewriter
               words={["Our Facilities"]}
               loop={false}
               cursor
-              cursorStyle="|"
+              cursorStyle="_"
               typeSpeed={60}
               deleteSpeed={40}
               delaySpeed={8000}
@@ -121,7 +68,7 @@ export default function FacilitiesPage() {
               <Link
                 key={index}
                 to={item.to}
-                className="group relative h-52 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                className="group relative h-64 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               >
                 {/* Image */}
                 <img

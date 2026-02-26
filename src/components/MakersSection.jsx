@@ -3,6 +3,7 @@ import { FaTools, FaLightbulb, FaUsers } from "react-icons/fa";
 import Btn from "../utlis/Btn";
 import { Link } from "react-router-dom";
 
+
 export default function MakersSection() {
   const container = {
     hidden: { opacity: 0 },
@@ -11,6 +12,19 @@ export default function MakersSection() {
       transition: { staggerChildren: 0.15 },
     },
   };
+
+  const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } }
+};
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -49,7 +63,7 @@ export default function MakersSection() {
   ];
 
   return (
-    <section className="relative bg-white py-12 lg:py-20 overflow-hidden">
+    <section className="relative bg-white py-8 lg:py-12 overflow-hidden">
       
       {/* Decorative Background Icons */}
       <div className="absolute inset-0 opacity-5 pointer-events-none hidden md:block">
@@ -73,7 +87,7 @@ export default function MakersSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="max-w-xl space-y-6 lg:space-y-8"
+            className="max-w-xl space-y-4 lg:space-y-6"
           >
             <div className="flex items-center gap-3 flex-wrap">
 
@@ -100,7 +114,7 @@ export default function MakersSection() {
             {/* Description */}
             <motion.p
               variants={fadeUp}
-              className="text-base sm:text-lg text-slate-600 leading-relaxed"
+              className="text-base sm:text-md text-slate-600 leading-relaxed"
             >
               A creative environment where students design, prototype,
               and turn ideas into impactful innovations. A creative
@@ -109,36 +123,39 @@ export default function MakersSection() {
             </motion.p>
 
             {/* Features */}
-            <motion.div variants={fadeUp} className="space-y-4 pt-2">
+
+             <motion.div className="space-y-2">
               {features.map((item, index) => (
                 <motion.div
                   key={index}
-                  variants={slideIn}
-                  whileHover={{ x: 8 }}
+                  variants={itemVariants}
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   className="flex items-start gap-4 p-4 rounded-xl bg-white border border-blue-100 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-blue-600 text-white shadow-md shrink-0">
-                    <item.icon className="text-lg" />
+                  {/* Icon */}
+                  <div className="relative flex items-center justify-center w-14 h-14 rounded-2xl 
+                                  bg-gradient-to-br from-blue-600 to-indigo-600 
+                                  text-white shadow-lg shadow-blue-500/20 
+                                  group-hover:rotate-6 transition-transform duration-300">
+                    <item.icon size={22} />
                   </div>
 
-                  <div>
-                    <h4 className="font-semibold text-slate-900">
+                  {/* Text */}
+                  <div className="flex-1">
+                    <h4 className="text-lg font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-slate-600">
+                    <p className="text-sm text-slate-500 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
+
+                  
                 </motion.div>
               ))}
-            </motion.div>
 
-            {/* CTA */}
-            <Link to="about">
-              <Btn className="mt-4 px-8 w-full sm:w-auto">
-                About Us
-              </Btn>
-            </Link>
+             </motion.div>
 
           </motion.div>
 

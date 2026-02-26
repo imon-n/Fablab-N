@@ -178,11 +178,16 @@ export default function FabLabHero() {
 
           {/* Buttons */}
           <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start flex-wrap">
-            <Link to="/booking">
+            
+            <a 
+              href="https://web.facebook.com/fablabcu/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <Btn>Join with Us</Btn>
-            </Link>
+            </a>
 
-            <Link to="/services">
+            <Link to="/about">
               <div className="inline-flex items-center gap-2 justify-center px-5 py-3 rounded-full font-bold text-base text-slate-200 border border-slate-600 hover:bg-blue-500/[0.08] hover:border-blue-500/50 transition-all duration-300">
                 Learn More
                 <MdArrowForward className="text-lg" />

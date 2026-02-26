@@ -3,59 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MdArrowOutward, MdChevronLeft, MdChevronRight } from "react-icons/md";
 import Btn from "../utlis/Btn";
-
-const facilities = [
-  {
-    to: "/facilities/3dlab",
-    label: "3D Fabrication Lab",
-    subtitle: "Rapid Prototyping",
-    image: "/services/laser-cutting.jpeg",
-  },
-  {
-    to: "/facilities/electronics-robotics-lab",
-    label: "Electronics & Robotics Lab",
-    subtitle: "Smart Systems",
-    image: "/services/fdm-3d-printing.jpg",
-  },
-  {
-    to: "/facilities/laser-cutting-lab",
-    label: "Laser Cutting Lab",
-    subtitle: "Precision Cutting",
-    image: "/services/sla-3d-printing.jpg",
-  },
-  {
-    to: "/facilities/cnc-woodworking-lab",
-    label: "CNC & Woodworking Lab",
-    subtitle: "Advanced Machining",
-    image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    to: "/facilities/graphics-print-lab",
-    label: "Graphics & Print Lab",
-    subtitle: "Creative Media",
-    image: "/services/fdm-3d-printing.jpg",
-  },
-  {
-    to: "/facilities/digital-textile-lab",
-    label: "Digital Textile Lab",
-    subtitle: "Smart Fabric",
-    image: "/services/sla-3d-printing.jpg",
-  },
-  {
-    to: "/facilities/competency-development-lab",
-    label: "Competency Development Lab",
-    subtitle: "Skill Growth",
-    image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    to: "/facilities/needle-thread-lab",
-    label: "Needle & Thread Lab",
-    subtitle: "Textile Craft",
-    image: "/services/laser-cutting.jpeg",
-  },
-];
+import { facilities } from "../pages/Facilities/dataFacilities";
 
 // Duplicate for infinite illusion
 const sliderItems = [...facilities, ...facilities];
@@ -79,9 +27,9 @@ export default function FacilitiesSection() {
       } else if (width < 1024) {
         cards = 2; // Tablet = 2
       } else if (width < 1280) {
-        cards = 3; // Laptop = 3
+        cards = 5; // Laptop = 3
       } else {
-        cards = 4; // Desktop = 4
+        cards = 5; // Desktop = 4
       }
 
       setVisibleCards(cards);
@@ -125,49 +73,58 @@ export default function FacilitiesSection() {
   };
 
   return (
-    <section className="py-16 lg:py-20 bg-white overflow-hidden">
+    <section className="py-8 lg:py-12 bg-white overflow-hidden">
       <div ref={containerRef} className="max-w-7xl mx-auto px-4 sm:px-6">
-
         {/* Header */}
-        <div className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-8 mb-10">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2 mb-6 md:mb-10">
+        {/* Left Content */}
+        <div className="max-w-xl">
+          <h2 className="text-3xl sm:text-4xl font-extrabold uppercase 
+                        bg-gradient-to-r from-blue-600 to-cyan-400 
+                        bg-clip-text text-transparent">
+            Facilities
+          </h2>
 
-          <div className="max-w-xl">
-            <h2 className="text-3xl sm:text-4xl font-extrabold uppercase bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">
-              Facilities
-            </h2>
-
-            <p className="mt-4 text-slate-600 leading-relaxed">
-              Explore our advanced innovation labs and fabrication spaces.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-
-            <Link to="facilities">
-              <Btn className="w-full sm:w-auto">
-                Explore All Facilities
-              </Btn>
-            </Link>
-
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => scroll("left")}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl border border-gray-300 flex items-center justify-center text-blue-900 hover:bg-gray-100 transition"
-              >
-                <MdChevronLeft size={24} />
-              </button>
-
-              <button
-                onClick={() => scroll("right")}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl border border-gray-300 flex items-center justify-center text-blue-900 hover:bg-gray-100 transition"
-              >
-                <MdChevronRight size={24} />
-              </button>
-            </div>
-
-          </div>
+          <p className="mt-3 text-slate-600 leading-relaxed">
+            Explore our advanced innovation labs and fabrication spaces.
+          </p>
         </div>
 
+        {/* Right Controls */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+
+          <Link to="facilities" className="w-full sm:w-auto">
+            <Btn className="w-full sm:w-auto">
+              Explore All Facilities
+            </Btn>
+          </Link>
+
+          <div className="flex items-center justify-start sm:justify-center gap-3">
+            <button
+              onClick={() => scroll("left")}
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl 
+                        border border-slate-300 
+                        flex items-center justify-center 
+                        text-blue-900 hover:bg-slate-100 
+                        transition-all duration-300"
+            >
+              <MdChevronLeft size={20} />
+            </button>
+
+            <button
+              onClick={() => scroll("right")}
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl 
+                        border border-slate-300 
+                        flex items-center justify-center 
+                        text-blue-900 hover:bg-slate-100 
+                        transition-all duration-300"
+            >
+              <MdChevronRight size={20} />
+            </button>
+          </div>
+
+        </div>
+      </div>
         {/* Slider */}
         <div className="overflow-hidden">
           <motion.div
@@ -203,7 +160,7 @@ export default function FacilitiesSection() {
                       {item.subtitle}
                     </span>
 
-                    <h3 className="text-lg sm:text-xl font-semibold pr-12">
+                    <h3 className="text-md sm:text-lg font-semibold pr-12">
                       {item.label}
                     </h3>
                   </div>
@@ -219,7 +176,6 @@ export default function FacilitiesSection() {
             ))}
           </motion.div>
         </div>
-
       </div>
     </section>
   );
