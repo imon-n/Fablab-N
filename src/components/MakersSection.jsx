@@ -179,7 +179,7 @@ const itemVariants = {
               <div className="aspect-video w-full">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/FxEmNchDkjU"
+                  src="https://www.youtube.com/embed/N-98IOOEEKc"
                   title="FabLab CU Introduction"
                   frameBorder="0"
                   allowFullScreen

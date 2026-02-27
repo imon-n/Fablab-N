@@ -8,36 +8,36 @@ export default function FacilitiesPage() {
   return (
     <>
       {/* ================= HERO BANNER ================= */}
-<section className="relative h-[380px] md:h-[460px] flex items-center justify-center text-center overflow-hidden">
-  
-  {/* Background Image */}
-  <img
-    src="https://i.ibb.co.com/yFCbjnm3/makers-lab-outils.webp"
-    alt="Facilities Banner"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
+      <section className="relative h-[380px] md:h-[460px] flex items-center justify-center text-center overflow-hidden">
 
-  {/* Perfect Dark Overlay */}
-  <div className="absolute inset-0 bg-black/20"></div>
+        {/* Background Image */}
+        <img
+          src="https://i.ibb.co.com/yFCbjnm3/makers-lab-outils.webp"
+          alt="Facilities Banner"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-  {/* Extra Depth Gradient */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40"></div>
+        {/* Perfect Dark Overlay */}
+        <div className="absolute inset-0 bg-black/20"></div>
 
-  {/* Content */}
-  <div className="relative z-10 max-w-3xl px-6 text-white ">
-    
-    <span className="inline-flex items-center gap-2 px-4 py-1 mb-4 text-sm tracking-widest  bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white">
-  
-  <span className="opacity-80">Fablab</span>
-  
-  <MdArrowForward className="text-white/70 text-base" />
-  
-  <span className="font-semibold">Facilities</span>
+        {/* Extra Depth Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40"></div>
 
-</span>
+        {/* Content */}
+        <div className="relative z-10 max-w-3xl px-6 text-white ">
 
-    <h1 className="ttext-5xl md:text-5xl font-bold tracking-tight text-white mb-4 uppercase">
-      <Typewriter
+          <span className="inline-flex items-center gap-2 px-4 py-1 mb-4 text-sm tracking-widest  bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white">
+
+            <span className="opacity-80">Fablab</span>
+
+            <MdArrowForward className="text-white/70 text-base" />
+
+            <span className="font-semibold">Facilities</span>
+
+          </span>
+
+          <h1 className="ttext-5xl md:text-5xl font-bold tracking-tight text-white mb-4 uppercase">
+            <Typewriter
               words={["Our Facilities"]}
               loop={false}
               cursor
@@ -46,16 +46,16 @@ export default function FacilitiesPage() {
               deleteSpeed={40}
               delaySpeed={8000}
             />
-      {/* Our Facilities */}
-    </h1>
+            {/* Our Facilities */}
+          </h1>
 
-    <p className="text-sm md:text-lg text-gray-300">
-      Discover advanced labs designed for creativity, rapid prototyping,
-      and real-world innovation.
-    </p>
+          <p className="text-sm md:text-lg text-gray-300">
+            Discover advanced labs designed for creativity, rapid prototyping,
+            and real-world innovation.
+          </p>
 
-  </div>
-</section>
+        </div>
+      </section>
 
 
       {/* ================= FACILITIES GRID ================= */}

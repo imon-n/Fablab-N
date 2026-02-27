@@ -155,18 +155,18 @@ export default function Projects() {
     <section className="py-6 md:py-8 px-6 bg-gradient-to-br from-slate-100 via-white to-blue-100">
       <div className="max-w-7xl mx-auto">
         <div className="space-y-2 mb-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-semibold tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-xs font-semibold tracking-widest uppercase">
             <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
             RA Projects Showcase
           </div>
 
-        <h2 className="text-3xl md:text-5xl font-extrabold ">
-          <span className="bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent uppercase">
-            Projects
-          </span>
-        </h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold ">
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent uppercase">
+              Projects
+            </span>
+          </h2>
 
-        <p className="text-slate-500 max-w-xl">
+          <p className="text-slate-500 max-w-xl">
             Innovative research and real-world solutions developed by our brightest Research Assistants.
           </p>
         </div>
@@ -178,9 +178,8 @@ export default function Projects() {
         >
           <div className="overflow-hidden">
             <div
-              className={`flex ${
-                transition ? "transition-transform duration-700 ease-in-out" : ""
-              }`}
+              className={`flex ${transition ? "transition-transform duration-700 ease-in-out" : ""
+                }`}
               style={{
                 transform: `translateX(-${(100 / visible) * current}%)`,
               }}

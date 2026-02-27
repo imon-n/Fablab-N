@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaLightbulb } from "react-icons/fa";
 import { FaWrench } from "react-icons/fa6";
 import Btn from "../utlis/Btn";
+import {Link} from "react-router-dom"
 
 export default function FabLabCTA() {
   const logos = [
@@ -70,9 +71,11 @@ export default function FabLabCTA() {
         </p>
 
         {/* Button */}
+        <Link to="/contact">
         <div className="w-full sm:w-auto flex justify-center">
           <Btn className="w-full sm:w-auto">Let's Connect</Btn>
         </div>
+        </Link>
       </motion.div>
 
       {/* ================= LOGO MARQUEE ================= */}

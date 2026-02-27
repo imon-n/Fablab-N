@@ -18,10 +18,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const navLinkClass = ({ isActive }) =>
-    `px-3 py-2 rounded-md text-sm font-medium transition ${
-      isActive
-        ? "text-cuBlue bg-slate-100"
-        : "text-slate-700 hover:bg-slate-50 hover:text-cuBlue"
+    `px-3 py-2 rounded-md text-sm font-medium transition ${isActive
+      ? "text-cuBlue bg-slate-100"
+      : "text-slate-700 hover:bg-slate-50 hover:text-cuBlue"
     }`;
 
   const Dropdown = ({ label, items }) => (
