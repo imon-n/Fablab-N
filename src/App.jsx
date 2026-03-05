@@ -24,6 +24,7 @@ import TextileLab from "./pages/Facilities/textilelab/TextileLab.jsx";
 import CompetencyLab from "./pages/Facilities/competency/CompetencyLab.jsx";
 import BrainLab from "./pages/Facilities/brainLab/BrainLab.jsx";
 import NeedleLab from "./pages/Facilities/needleLab/NeedleLab.jsx";
+import EngagementPage from "./pages/EngagementPage.jsx";
 
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
 
 
           <Route path="/facilities" element={<FacilitiesPage />} />
+          <Route path="/engagment" element={<EngagementPage />} />
 
           {/* facilities routes */}
             <Route

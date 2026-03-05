@@ -75,11 +75,10 @@ export default function Navbar() {
 
           <NavLink to="/" className={navLinkClass}>Home</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
-          <NavLink to="/research" className={navLinkClass}>Research</NavLink>
           <NavLink to="/facilities" className={navLinkClass}>Facilities</NavLink>
+          <NavLink to="/engagment" className={navLinkClass}>Engagment</NavLink>
 
           <Dropdown label="Bulletin" items={bulletinItems} />
-          <Dropdown label="Education" items={bulletinItems} />
 
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
 
