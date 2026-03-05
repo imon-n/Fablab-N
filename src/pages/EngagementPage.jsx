@@ -18,7 +18,7 @@ export default function EngagementPage() {
       <section className="relative h-[320px] md:h-[460px] flex items-center justify-center text-center overflow-hidden">
 
         <img
-          src="https://i.ibb.co.com/yFCbjnm3/makers-lab-outils.webp"
+          src="https://i.ibb.co.com/21XmCR81/engagment-Hero.png"
           alt="Engagement Banner"
           className="absolute inset-0 w-full h-full object-cover"
         />
